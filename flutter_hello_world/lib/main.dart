@@ -14,7 +14,15 @@ class MeuApp extends StatelessWidget {
   }
 }
 
-class HomePage extends StatelessWidget {
+class HomePage extends StatefulWidget {
+  @override
+  State<StatefulWidget> createState() {
+    return _HomePageState();
+  }
+}
+
+
+class _HomePageState extends State<HomePage> {
   var count = 0;
 
 
@@ -40,7 +48,9 @@ class HomePage extends StatelessWidget {
           Icons.add,
         ),
         onPressed: () {
-          count++;
+          setState(() {
+            count++;
+          });
           print('count: $count');
         },
       ),
