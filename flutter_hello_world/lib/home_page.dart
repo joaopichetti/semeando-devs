@@ -23,16 +23,18 @@ class _HomePageState extends State<HomePage> {
       body: SizedBox(
         width: double.infinity,
         height: double.infinity,
-        child: Column(
-          children: [
-            for (final color in colors)
-              Container(
-                height: 80,
-                width: 80,
-                margin: EdgeInsets.all(8),
-                color: color,
-              ),
-          ],
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+              for (final color in colors)
+                Container(
+                  height: 80,
+                  width: 80,
+                  margin: EdgeInsets.all(8),
+                  color: color,
+                ),
+            ],
+          ),
         ),
       ),
     );
