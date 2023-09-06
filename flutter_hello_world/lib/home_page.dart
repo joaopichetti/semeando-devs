@@ -23,16 +23,17 @@ class _HomePageState extends State<HomePage> {
       body: SizedBox(
         width: double.infinity,
         height: double.infinity,
-        child: ListView(
-          children: [
-            for (final color in colors)
-              Container(
-                height: 80,
-                width: 80,
-                margin: EdgeInsets.all(8),
-                color: color,
-              ),
-          ],
+        child: ListView.builder(
+          itemCount: colors.length,
+          itemBuilder: (context, index) {
+            final color = colors[index];
+            return Container(
+              height: 80,
+              width: double.infinity,
+              margin: EdgeInsets.all(8),
+              color: color,
+            );
+          },
         ),
       ),
     );
