@@ -17,8 +17,11 @@ class MeuApp extends StatelessWidget {
 class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Material(
-      child: Center(
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Home'),
+      ),
+      body: Center(
         child: Text(
           'Minha Aplicação',
           style: TextStyle(
@@ -28,6 +31,14 @@ class HomePage extends StatelessWidget {
             color: Colors.blue,
           ),
         ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        child: Icon(
+          Icons.edit,
+        ),
+        onPressed: () {
+          print('clicou');
+        },
       ),
     );
   }
