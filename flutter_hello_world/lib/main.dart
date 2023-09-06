@@ -19,7 +19,15 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Material(
       child: Center(
-        child: Text('Minha Aplicação'),
+        child: Text(
+          'Minha Aplicação',
+          style: TextStyle(
+            fontSize: 30,
+            fontStyle: FontStyle.italic,
+            fontWeight: FontWeight.bold,
+            color: Colors.blue,
+          ),
+        ),
       ),
     );
   }
