@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget {
@@ -8,7 +10,9 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  var count = 0;
+  final List<Color> colors = List.generate(10, (index) {
+    return Colors.primaries[Random().nextInt(Colors.primaries.length)];
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -19,25 +23,15 @@ class _HomePageState extends State<HomePage> {
       body: SizedBox(
         width: double.infinity,
         height: double.infinity,
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          crossAxisAlignment: CrossAxisAlignment.end,
+        child: Column(
           children: [
-            Container(
-              height: 80,
-              width: 80,
-              color: Colors.red,
-            ),
-            Container(
-              height: 80,
-              width: 80,
-              color: Colors.blue,
-            ),
-            Container(
-              height: 80,
-              width: 80,
-              color: Colors.green,
-            ),
+            for (final color in colors)
+              Container(
+                height: 80,
+                width: 80,
+                margin: EdgeInsets.all(8),
+                color: color,
+              ),
           ],
         ),
       ),
