@@ -15,6 +15,9 @@ class MeuApp extends StatelessWidget {
 }
 
 class HomePage extends StatelessWidget {
+  var count = 0;
+
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -23,7 +26,7 @@ class HomePage extends StatelessWidget {
       ),
       body: Center(
         child: Text(
-          'Minha Aplicação',
+          'Você clicou $count vezes no Floating Action Button',
           style: TextStyle(
             fontSize: 30,
             fontStyle: FontStyle.italic,
@@ -34,10 +37,11 @@ class HomePage extends StatelessWidget {
       ),
       floatingActionButton: FloatingActionButton(
         child: Icon(
-          Icons.edit,
+          Icons.add,
         ),
         onPressed: () {
-          print('clicou');
+          count++;
+          print('count: $count');
         },
       ),
     );
