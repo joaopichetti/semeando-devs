@@ -16,24 +16,29 @@ class _HomePageState extends State<HomePage> {
       appBar: AppBar(
         title: Text('Home'),
       ),
-      body: Column(
-        children: [
-          Container(
-            height: 80,
-            width: 80,
-            color: Colors.red,
-          ),
-          Container(
-            height: 80,
-            width: 80,
-            color: Colors.blue,
-          ),
-          Container(
-            height: 80,
-            width: 80,
-            color: Colors.green,
-          ),
-        ],
+      body: SizedBox(
+        width: double.infinity,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          crossAxisAlignment: CrossAxisAlignment.end,
+          children: [
+            Container(
+              height: 80,
+              width: 80,
+              color: Colors.red,
+            ),
+            Container(
+              height: 80,
+              width: 80,
+              color: Colors.blue,
+            ),
+            Container(
+              height: 80,
+              width: 80,
+              color: Colors.green,
+            ),
+          ],
+        ),
       ),
     );
   }
