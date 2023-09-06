@@ -5,15 +5,21 @@ void main() {
   runApp(MeuApp());
 }
 
-
 class MeuApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: Center(
-        child: Text(
-          'Minha Aplicação',
-        ),
+      home: HomePage(),
+    );
+  }
+}
+
+class HomePage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Material(
+      child: Center(
+        child: Text('Minha Aplicação'),
       ),
     );
   }
